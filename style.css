@@ -48,6 +48,7 @@ article {
     width:160px;
 }
 
+ /* MOBILE FIRST */
 @media (min-width:920px) {
 
     main {
@@ -65,7 +66,7 @@ article {
 }
 
 
-/* 
+/* DESKTOP-FIRST
 @media (max-width:920px) {
     body {
         background: lightcoral;
