@@ -1,3 +1,8 @@
+html {
+    font-size: 12px;
+}
+
+
 header, footer {
     display:flex;
     height:200px;
@@ -8,19 +13,29 @@ header, footer {
 }
 
 h1 {
+    font-size:2.5rem;
+    text-align: center;
     font-family: "SUSE Mono",'Courier New', Courier, monospace;
 }
 
+h2 {
+    font-size:2rem;
+    text-align: center;
+}
+
 main {
-    display:flex;
-    flex-direction: column;
     align-items: center;
     background:lightblue;
     min-width:50px;
+    padding:16px;
+}
+
+.main-content {
+    display:flex;
+    flex-direction: column;
     flex-grow:3;
     gap:8px;
     justify-content: space-around;
-    padding:16px;
     flex-wrap: wrap;
 }
 
@@ -31,9 +46,18 @@ aside {
     flex-grow: 1;
     min-width:250px;
     color: white;
-    font-size:36px;
     /* max-width:25%; */
 }
+
+p {
+    font-size:1.5rem;
+}
+
+.main-content > div {
+    display:flex;
+    gap:8px;    
+} 
+
 
 .flex {
     display:flex;
@@ -44,15 +68,54 @@ aside {
 
 article {
     background: darkblue;
-    height:160px;
-    width:160px;
+    height:180px;
+    width:180px;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:16px;
+}
+
+h3 {
+    font-size:2em;
 }
 
  /* MOBILE FIRST */
+
+
+ /* Desktop - 920px och större */
+
+
+ /* Alternativ 1 */ 
+
+ @media (min-width:580px) and (max-width:920px) {
+    body {
+        background:pink;
+    }
+ }
+
+ /* Alternativ 2 */
+ 
+ @media (580px < width < 920px) {
+    body {
+        background:red;
+    }
+ }
+
 @media (min-width:920px) {
 
-    main {
+    html {
+        font-size:16px;
+    }
+
+    /* main {
         flex-direction: row;
+    } */
+
+    .main-content {
+        flex-direction: row;
+        align-content: flex
     }
 
     .flex {
@@ -63,6 +126,14 @@ article {
         max-width:25%;
     }
 
+}
+
+
+@media print {
+    main,article {
+        text-align: center;
+        border:1px solid red;
+    }    
 }
 
 
